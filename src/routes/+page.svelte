@@ -124,7 +124,6 @@
 		</div>
 
 		<nav class="nav flex w-full items-center gap-2 sm:gap-3 px-4 sm:px-6 py-4 relative z-10">
-			<a href="/discount" class="nav-link">Save 50%</a>
 			<a href="#faq" class="nav-link mr-auto">FAQ</a>
 			<button
 				type="button"
@@ -138,14 +137,14 @@
 					<Moon class="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2} />
 				{/if}
 			</button>
-			<a
+			<!-- <a
 				href="https://polar.sh/tonnoz-services/portal"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="recover"
 			>
 				Recover Key
-			</a>
+			</a> -->
 		</nav>
 
 		<section class="hero flex flex-col items-center px-6 pt-0 pb-20 relative z-10">
@@ -185,21 +184,13 @@
 		</section>
 
 		<div class="mx-auto w-full max-w-2xl space-y-6 px-6 pb-20 relative z-10">
-			<a href="/discount" class="reel-banner">
-				<span class="text-2xl">🎬</span>
-				<span>
-					<span class="font-semibold text-card">Make a reel, get SlapMac for free.</span>
-					<span class="text-sm text-muted"> See how it works ➡️</span>
-				</span>
-			</a>
-
 			<div class="card">
 				<h2 class="card-title flex items-center gap-3">
 					<Heart class={iconLg} strokeWidth={2} />
 					Your laptop has feelings now
 				</h2>
 				<p class="card-body mt-3">
-					SlapMac hides in your menu bar. Slap your MacBook and it screams back, with volume
+					SlapYourMac hides in your menu bar. Slap your MacBook and it screams back, with volume
 					proportional to your force.
 				</p>
 				<div class="relative mt-6 flex justify-center">
@@ -606,7 +597,7 @@
 		<div class="flex flex-col items-center py-12 text-center px-6 relative z-10">
 			<p class="mt-20 font-medium text-card">
 				<span class="inline-block animate-wave origin-[70%_70%]">👋</span>
-				$7. Less than a burrito. More fun than your therapist.
+				$2. Less than a burrito. More fun than your therapist.
 			</p>
 			<p class="mt-2 text-sm text-muted">
 				Requires an M1PRO+ MacBook and a willingness to hit expensive things.
@@ -645,13 +636,7 @@
 						</button>
 						{#if openFaq === i}
 							<div class="faq-a text-sm text-muted">
-								{#if item.aHtml}
-									Yes! Make a Reel about SlapMac, tag @tonnozfpv and add #slapmac. Hit 2,000 views
-									and we'll refund you.
-									<a href="/discount" class="link-inline">See how it works →</a>
-								{:else}
-									{item.a}
-								{/if}
+								{item.a}
 							</div>
 						{/if}
 					</div>
@@ -659,50 +644,9 @@
 			</div>
 		</div>
 
-		<div class="flex flex-col items-center gap-4 px-6 py-16 relative z-10">
-			<p class="font-mono text-sm text-muted">
-				Built with Amore <span class="text-lg">🫦</span>
-			</p>
-			<a href="https://amore.computer" target="_blank" rel="noopener noreferrer">
-				<img src="{ASSET}/amore.webp" alt="Amore" class="h-20 w-20 object-contain mx-auto" />
-			</a>
-		</div>
+		
 
-		<footer class="border-t border-default px-6 py-8 relative z-10">
-			<div
-				class="mx-auto flex max-w-2xl flex-col items-center gap-4 sm:gap-0 text-center text-xs text-muted sm:flex-row sm:justify-evenly"
-			>
-				<span
-					>built with 👋 by
-					<a
-						href="https://instagram.com/tonnozfpv"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="link-foot">tonnoz</a
-					></span
-				>
-				<a href="/discount" class="link-foot">Creator Discount</a>
-				<a href="/privacy" class="link-foot">Privacy</a>
-				<a href="/terms" class="link-foot">Terms</a>
-				<span
-					>Check out also:
-					<a
-						href="https://routesketcher.com"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="link-foot">RouteSketcher</a
-					></span
-				>
-			</div>
-			<div class="mx-auto mt-4 max-w-2xl text-center text-[10px] leading-relaxed text-muted-60">
-				<p>© 2026 SlapMac. All rights reserved.</p>
-				<p class="mt-1">
-					The SlapMac name, logo, brand colors, visual design, and all website content are the exclusive
-					intellectual property of their owner. Unauthorized reproduction, copying, or imitation in any
-					form is strictly prohibited.
-				</p>
-			</div>
-		</footer>
+		
 	</div>
 </div>
 
@@ -867,21 +811,6 @@
 	}
 	.btn-primary:active {
 		transform: translateY(1px);
-	}
-	.reel-banner {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.75rem;
-		border-radius: 1rem;
-		border: 2px dashed color-mix(in oklab, var(--primary) 40%, transparent);
-		background: color-mix(in oklab, var(--primary) 5%, transparent);
-		padding: 1rem 1.5rem;
-		text-align: center;
-		transition: background 0.15s;
-	}
-	.reel-banner:hover {
-		background: color-mix(in oklab, var(--primary) 10%, transparent);
 	}
 	.card {
 		border-radius: 1rem;
@@ -1343,9 +1272,6 @@
 	}
 	.text-xs {
 		font-size: 0.75rem;
-	}
-	.text-\[10px\] {
-		font-size: 10px;
 	}
 	.text-2xl {
 		font-size: 1.5rem;
