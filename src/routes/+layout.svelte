@@ -1,7 +1,10 @@
 <script lang="ts">
 	import '../app.css';
+	import { registerSlapmacSeoLoadTracking } from '$lib/analytics/mixpanel-seo';
 
 	let { children } = $props();
+
+	registerSlapmacSeoLoadTracking();
 </script>
 
 <svelte:head>
