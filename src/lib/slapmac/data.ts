@@ -65,7 +65,7 @@ export const VOICE_PACKS: VoicePack[] = [
 	}
 ];
 
-export const FAQ_ITEMS: { q: string; a: string; aHtml?: boolean }[] = [
+export const FAQ_ITEMS: { q: string; a: string }[] = [
 	{
 		q: 'Will I void my MacBook warranty with SlapMac?',
 		a: "Probably not — but we're not lawyers. SlapMac uses the built-in accelerometer, no hardware mods. That said, if you slap hard enough to crack your screen, that's on you."
@@ -92,8 +92,7 @@ export const FAQ_ITEMS: { q: string; a: string; aHtml?: boolean }[] = [
 	},
 	{
 		q: "It's too expensive. Can I get a discount?",
-		a: '',
-		aHtml: true
+		a: "Two bucks is the whole deal — no coupons, no hoops. Cheaper than replacing the coffee you spilled while laughing."
 	},
 	{
 		q: 'Is there a Windows version?',

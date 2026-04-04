@@ -1,7 +1,7 @@
 import { getSiteUrl } from '$lib/seo/site';
 import type { RequestHandler } from './$types';
 
-const paths = ['/', '/privacy', '/terms', '/discount'] as const;
+const paths = ['/', '/privacy', '/terms'] as const;
 
 export const GET: RequestHandler = () => {
 	const base = getSiteUrl();
