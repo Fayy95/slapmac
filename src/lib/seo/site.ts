@@ -2,7 +2,7 @@
 export function getSiteUrl(): string {
 	const v = import.meta.env.PUBLIC_SITE_URL as string | undefined;
 	if (v && typeof v === 'string' && v.trim()) return v.replace(/\/+$/, '');
-	return 'https://slapmac.com';
+	return 'https://slapmymac.net';
 }
 
 export const SITE_NAME = 'SlapMac';
