@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+	--background: #fdf7f0;
+	--foreground: #0d261e;
+	--card: #fffdfa;
+	--card-foreground: #0d261e;
+	--popover: #fff;
+	--popover-foreground: #0d261e;
+	--primary: #448f22;
+	--primary-foreground: #f5fffc;
+	--secondary: #ecf4f1;
+	--secondary-foreground: #20604a;
+	--muted: #edf2f0;
+	--muted-foreground: #375e52;
+	--accent: #e2f3ed;
+	--accent-foreground: #1a664d;
+	--destructive: #ef4343;
+	--destructive-foreground: #fafafa;
+	--border: #dae7e2;
+	--input: #dae7e2;
+	--ring: #0ea472;
+	--radius: 0.35rem;
+	--font-sans: 'Inter', sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
+	--tracking-normal: -0.01em;
+	--spacing: 0.25rem;
+}
+
+html.dark {
+	--background: #312d27;
+	--foreground: #f9fbfa;
+	--card: #08120e;
+	--card-foreground: #f9fbfa;
+	--popover: #060e0c;
+	--popover-foreground: #f9fbfa;
+	--primary: #89c428;
+	--primary-foreground: #f5fffc;
+	--secondary: #172621;
+	--secondary-foreground: #e0ebe7;
+	--muted: #13201c;
+	--muted-foreground: #98b3aa;
+	--accent: #19342b;
+	--accent-foreground: #f9fbfa;
+	--destructive: #912222;
+	--destructive-foreground: #fafafa;
+	--border: #1f2e29;
+	--input: #1f2e29;
+	--ring: #12d393;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	zoom: 1.25;
+}
+
+@media (max-width: 640px) {
+	html {
+		zoom: 1;
+	}
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: var(--font-sans);
+	letter-spacing: var(--tracking-normal);
+	background-color: var(--background);
+	color: var(--foreground);
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+@keyframes slap {
+	0% {
+		transform: rotate(0) scale(1);
+	}
+	10% {
+		transform: rotate(-12deg) scale(0.95);
+	}
+	20% {
+		transform: rotate(8deg) scale(1.02);
+	}
+	35% {
+		transform: rotate(-5deg) scale(0.98);
+	}
+	50% {
+		transform: rotate(3deg) scale(1.01);
+	}
+	65% {
+		transform: rotate(-1deg) scale(1);
+	}
+	80% {
+		transform: rotate(0) scale(1);
+	}
+	to {
+		transform: rotate(0) scale(1);
+	}
+}
+
+@keyframes wave {
+	0%,
+	to {
+		transform: rotate(0);
+	}
+	15% {
+		transform: rotate(14deg);
+	}
+	30% {
+		transform: rotate(-8deg);
+	}
+	45% {
+		transform: rotate(14deg);
+	}
+	60% {
+		transform: rotate(-4deg);
+	}
+	75% {
+		transform: rotate(10deg);
+	}
+}
+
+.animate-slap {
+	animation: 0.6s ease-out both slap;
+}
+
+.animate-wave {
+	animation: 1.5s ease-in-out infinite wave;
+}
+
+.light-rays-container {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 80% 50% at 50% -20%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 55%),
+		radial-gradient(ellipse 60% 40% at 80% 20%, color-mix(in oklab, var(--ring) 12%, transparent), transparent 50%),
+		radial-gradient(ellipse 50% 35% at 15% 30%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 45%);
+	opacity: 0.9;
+}
+
+html.dark .light-rays-container {
+	background:
+		radial-gradient(ellipse 80% 50% at 50% -20%, color-mix(in oklab, var(--primary) 25%, transparent), transparent 55%),
+		radial-gradient(ellipse 60% 40% at 80% 20%, color-mix(in oklab, var(--ring) 18%, transparent), transparent 50%),
+		radial-gradient(ellipse 50% 35% at 15% 30%, color-mix(in oklab, var(--primary) 15%, transparent), transparent 45%);
+}
+
+/* layout helpers mirroring slapmac.com */
+.text-primary {
+	color: var(--primary);
+}
+.text-muted {
+	color: var(--muted-foreground);
+}
+.text-muted-60 {
+	color: color-mix(in oklab, var(--muted-foreground) 60%, transparent);
+}
+.text-card {
+	color: var(--card-foreground);
+}
+.bg-card {
+	background: var(--card);
+}
+.border-default {
+	border: 1px solid var(--border);
+}
+.shadow-card {
+	box-shadow:
+		0 4px 12px color-mix(in oklab, var(--foreground) 6%, transparent),
+		0 1px 2px -1px color-mix(in oklab, var(--foreground) 6%, transparent);
+}
+html.dark .shadow-card {
+	box-shadow:
+		0 6px 20px color-mix(in oklab, #000 45%, transparent),
+		0 1px 2px -1px color-mix(in oklab, #000 45%, transparent);
+}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+.focus-ring:focus-visible {
+	outline: none;
+	border-color: var(--ring);
+	box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 50%, transparent);
+}
