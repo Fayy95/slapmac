@@ -44,11 +44,9 @@
 			</button>
 		</div>
 		<p class="muted small">
-			Verify in the Mac app: <code class="inline">POST /api/license/verify</code> with JSON
-			<code class="inline">&#123; "license_key": "…" &#125;</code>.
+			Verify in the Mac app: 
 		</p>
 		<p class="muted small"><a href="/recover-license">Recover by email</a></p>
-		<p class="muted small">Issue via checkout: <code class="inline">GET /api/license?session_id=…</code></p>
 		<p><a href="/">← Back to home</a></p>
 	{/if}
 </main>
