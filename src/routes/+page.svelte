@@ -124,7 +124,8 @@
 		</div>
 
 		<nav class="nav flex w-full items-center gap-2 sm:gap-3 px-4 sm:px-6 py-4 relative z-10">
-			<a href="#faq" class="nav-link mr-auto">FAQ</a>
+			<a href="#faq" class="nav-link">FAQ</a>
+			<a href="/features" class="nav-link mr-auto">Features</a>
 			<button
 				type="button"
 				class="theme-btn"
@@ -137,14 +138,7 @@
 					<Moon class="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2} />
 				{/if}
 			</button>
-			<!-- <a
-				href="https://polar.sh/tonnoz-services/portal"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="recover"
-			>
-				Recover Key
-			</a> -->
+			<a href="/recover-license" class="recover">Recover license</a>
 		</nav>
 
 		<section class="hero flex flex-col items-center px-6 pt-0 pb-20 relative z-10">
