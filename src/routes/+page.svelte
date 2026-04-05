@@ -12,12 +12,12 @@
 		CircleQuestionMark,
 		Download,
 		Filter,
+		FolderOpen,
 		Gauge,
 		Glasses,
 		Hand,
 		Heart,
 		LayoutGrid,
-		Mic,
 		MonitorSmartphone,
 		Moon,
 		Mountain,
@@ -108,7 +108,17 @@
 		});
 	}
 
-	const featureIcons = [Hand, Volume2, Gauge, Timer, Usb, MonitorSmartphone, ChartColumn, AudioLines];
+	const featureIcons = [
+		Hand,
+		Volume2,
+		Gauge,
+		Timer,
+		Usb,
+		MonitorSmartphone,
+		ChartColumn,
+		AudioLines,
+		FolderOpen
+	];
 </script>
 
 <SeoHead
@@ -283,7 +293,8 @@
 					Seven moods of protest
 				</h2>
 				<p class="card-body mt-3">
-					130+ sound clips across 7 voice packs. Your open-plan office will have questions.
+					130+ sound clips across 7 built-in voice packs, plus custom packs from your own audio folders.
+					Your open-plan office will have questions.
 				</p>
 				<div class="mt-6 flex flex-col items-center space-y-4">
 					<select bind:value={voiceId} class="voice-select" aria-label="Voice pack">
@@ -409,7 +420,7 @@
 								<p class="text-sm font-semibold text-card">
 									Lid Creak, USB Moaner, independent modes & soundpacks
 								</p>
-								<span class="badge-ver">v1.2.0 — current</span>
+								<span class="badge-ver">v1.2.0</span>
 							</div>
 							<p class="mt-1 text-xs leading-relaxed text-muted">
 								Lid creak mode, USB trigger mode, decoupled soundpacks, settings overhaul, about
@@ -419,20 +430,19 @@
 					</div>
 					<div class="road-row">
 						<div class="road-rail">
-							<div class="road-dot road-dot--dash">
-								<Mic class="h-5 w-5 text-muted" strokeWidth={2} />
+							<div class="road-dot road-dot--fill">
+								<CircleCheck class="h-5 w-5" strokeWidth={2} />
 							</div>
 							<div class="road-line"></div>
 						</div>
 						<div class="road-body pb-8">
 							<div class="flex flex-wrap items-center gap-x-2 gap-y-1">
 								<p class="text-sm font-semibold text-card">Custom sound packs</p>
-								<span class="badge-muted">v1.3</span>
-								<span class="badge-soon">coming soon</span>
+								<span class="badge-ver">v1.3.0 — current</span>
 							</div>
 							<p class="mt-1 text-xs leading-relaxed text-muted">
-								Add your own sounds. Record your voice, your cat, your boss — whatever you want your
-								MacBook to scream.
+								Roll your own packs in Settings: point SlapMac at a folder of audio files and wire
+								them to slap, USB, lid creak, and the rest — alongside the built-in voice packs.
 							</p>
 						</div>
 					</div>
@@ -446,7 +456,7 @@
 						<div class="road-body pb-8">
 							<div class="flex flex-wrap items-center gap-x-2 gap-y-1">
 								<p class="text-sm font-semibold text-card">Local MCP server</p>
-								<span class="badge-muted">v1.3</span>
+								<span class="badge-muted">v1.4</span>
 							</div>
 							<p class="mt-1 text-xs leading-relaxed text-muted">
 								Speak to SlapMac via MCP. Give your AI assistant some emotions.
