@@ -41,6 +41,7 @@
 		VOICE_PACKS,
 		type VoicePack
 	} from '$lib/slapmac/data';
+	import { trackDownloadClick } from '$lib/analytics/mixpanel-seo';
 	import SeoHead from '$lib/seo/SeoHead.svelte';
 	import { buildHomepageJsonLd } from '$lib/seo/homepage-jsonld';
 
@@ -167,7 +168,11 @@
 				That's it. That's the app.
 			</p>
 			<div class="mt-4 flex items-center gap-4">
-				<a href={DOWNLOAD_URL} class="btn-primary">
+				<a
+					href={DOWNLOAD_URL}
+					class="btn-primary"
+					onclick={() => trackDownloadClick('home_hero')}
+				>
 					<Download class="h-4 w-4" strokeWidth={2} />
 					Download for Mac
 				</a>
@@ -193,7 +198,7 @@
 			</div>
 		</div>
 
-		<div class="video-strip mx-auto w-full max-w-2xl px-6 py-6 relative z-10">
+		<!-- <div class="video-strip mx-auto w-full max-w-2xl px-6 py-6 relative z-10">
 			<a
 				href="https://www.instagram.com/p/DV9BDmJjCBW/"
 				target="_blank"
@@ -244,7 +249,7 @@
 					</div>
 				</div>
 			</a>
-		</div>
+		</div> -->
 
 		<div class="mx-auto w-full max-w-2xl space-y-6 px-6 pb-20 relative z-10">
 			<div class="card">
@@ -597,7 +602,11 @@
 				Requires an M1PRO+ MacBook and a willingness to hit expensive things.
 			</p>
 			<div class="mt-6 flex items-center gap-4">
-				<a href={DOWNLOAD_URL} class="btn-primary">
+				<a
+					href={DOWNLOAD_URL}
+					class="btn-primary"
+					onclick={() => trackDownloadClick('home_footer')}
+				>
 					<Download class="h-4 w-4" strokeWidth={2} />
 					Download for Mac
 				</a>

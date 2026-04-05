@@ -26,3 +26,14 @@ export function registerSlapmacSeoLoadTracking(): void {
 		});
 	});
 }
+
+/** Fired when the user clicks a Mac app download link. */
+export function trackDownloadClick(cta: string): void {
+	if (!browser) return;
+	ensureInit();
+	mixpanel.track('slapmac_download_click', {
+		path: window.location.pathname,
+		url: window.location.href,
+		cta
+	});
+}
