@@ -1,7 +1,7 @@
 export const ASSET = 'https://slapmac.com';
 
 export const DOWNLOAD_URL =
-	'https://staffwatcher.nyc3.cdn.digitaloceanspaces.com/builds/SpankApp.app.zip';
+	'https://staffwatcher.nyc3.cdn.digitaloceanspaces.com/builds/SlapMyMac.app.zip';
 
 export type VoicePack = {
 	value: string;
