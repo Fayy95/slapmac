@@ -7,6 +7,7 @@
 		ChartColumn,
 		Download,
 		Filter,
+		FolderOpen,
 		Gauge,
 		Hand,
 		LayoutDashboard,
@@ -35,7 +36,17 @@
 	import SeoHead from '$lib/seo/SeoHead.svelte';
 
 	const algoIcons = [Filter, Activity, Zap, Mountain, TrendingUp] as const;
-	const featureIcons = [Hand, Volume2, Gauge, Timer, Usb, MonitorSmartphone, ChartColumn, AudioLines];
+	const featureIcons = [
+		Hand,
+		Volume2,
+		Gauge,
+		Timer,
+		Usb,
+		MonitorSmartphone,
+		ChartColumn,
+		AudioLines,
+		FolderOpen
+	];
 
 	let dark = $state(false);
 	let themeReady = $state(false);
@@ -217,7 +228,9 @@
 			<span>Voice Packs</span>
 		</div>
 		<h2 class="section-title">Seven moods of protest</h2>
-		<p class="section-sub">130+ sound clips. Pick your MacBook's personality.</p>
+		<p class="section-sub">
+			130+ sound clips across seven built-in packs — plus your own folders as custom packs in Settings.
+		</p>
 
 		<div class="packs-grid">
 			{#each VOICE_PACKS as pack}

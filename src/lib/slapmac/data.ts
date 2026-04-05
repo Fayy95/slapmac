@@ -76,7 +76,7 @@ export const FAQ_ITEMS: { q: string; a: string }[] = [
 	},
 	{
 		q: 'Can I add my own sounds?',
-		a: "Not yet — but it's on the roadmap. For now you get 130+ clips across 7 voice packs, which is more than enough to annoy everyone around you."
+		a: 'Yes. In Settings you can add custom sound packs from a folder on your Mac and assign them to slap, USB, lid creak, and other triggers — on top of the 7 built-in voice packs and 130+ clips.'
 	},
 	{
 		q: 'Does it drain my battery?',
@@ -132,6 +132,10 @@ export const FEATURE_GRID = [
 	{
 		title: 'Onboarding',
 		body: 'A polite welcome before the chaos begins.'
+	},
+	{
+		title: 'Custom sound packs',
+		body: 'Drop in your own folders of clips in Settings. Your MacBook, your samples.'
 	}
 ];
 
@@ -159,6 +163,10 @@ export const NERDY_ALGORITHMS = [
 ];
 
 export const PAST_RELEASES = [
+	{
+		v: 'v1.3.0',
+		text: 'Custom sound packs from local folders, assignable to slap / USB / lid and more'
+	},
 	{
 		v: 'v1.0.16',
 		text: 'About page, commentator voice toggle, heavy punches at max combo, brand color update'
