@@ -31,6 +31,7 @@
 		VOICE_PACKS,
 		type VoicePack
 	} from '$lib/slapmac/data';
+	import { trackDownloadClick } from '$lib/analytics/mixpanel-seo';
 	import SeoHead from '$lib/seo/SeoHead.svelte';
 
 	const algoIcons = [Filter, Activity, Zap, Mountain, TrendingUp] as const;
@@ -92,7 +93,7 @@
 	<nav class="nav">
 		<a href="/" class="nav-back">← Home</a>
 		<div class="nav-right">
-			<a href={DOWNLOAD_URL} class="nav-dl">
+			<a href={DOWNLOAD_URL} class="nav-dl" onclick={() => trackDownloadClick('features_nav')}>
 				<Download class="nav-dl-icon" strokeWidth={2} />
 				Download
 			</a>
@@ -360,7 +361,7 @@
 	<div class="cta">
 		<p class="cta-text">Ready to abuse your hardware?</p>
 		<p class="cta-sub">$2 one-time · M1PRO+ MacBook · macOS 14.6+</p>
-		<a href={DOWNLOAD_URL} class="btn-primary">
+		<a href={DOWNLOAD_URL} class="btn-primary" onclick={() => trackDownloadClick('features_cta')}>
 			<Download class="btn-ico" strokeWidth={2} />
 			Download for Mac
 		</a>
