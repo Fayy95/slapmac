@@ -43,6 +43,7 @@
 	} from '$lib/slapmac/data';
 	import { trackDownloadClick } from '$lib/analytics/mixpanel-seo';
 	import SeoHead from '$lib/seo/SeoHead.svelte';
+	import { DEFAULT_TITLE } from '$lib/seo/site';
 	import { buildHomepageJsonLd } from '$lib/seo/homepage-jsonld';
 
 	const iconSm = 'h-4 w-4 text-muted shrink-0';
@@ -122,8 +123,8 @@
 </script>
 
 <SeoHead
-	title="SlapMac — Slap your MacBook. It talks back."
-	keywords="SlapMac, MacBook, macOS, menu bar app, accelerometer, USB moaner, lid creak, Mac humor, Sonoma, Apple Silicon"
+	title={DEFAULT_TITLE}
+	keywords="SlapMac, Slap My Mac, MacBook, macOS, menu bar app, accelerometer, USB moaner, lid creak, custom sound pack, Apple Silicon, M1 Pro, M2 Pro, Sonoma, Mac humor"
 	structuredData={buildHomepageJsonLd()}
 />
 

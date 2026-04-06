@@ -5,10 +5,11 @@ const paths = ['/', '/features', '/privacy', '/terms'] as const;
 
 export const GET: RequestHandler = () => {
 	const base = getSiteUrl();
+	const lastmod = new Date().toISOString().slice(0, 10);
 	const urls = paths
 		.map(
 			(p) =>
-				`  <url>\n    <loc>${base}${p === '/' ? '' : p}</loc>\n    <changefreq>${p === '/' ? 'weekly' : 'monthly'}</changefreq>\n    <priority>${p === '/' ? '1.0' : '0.6'}</priority>\n  </url>`
+				`  <url>\n    <loc>${base}${p === '/' ? '' : p}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${p === '/' ? 'weekly' : 'monthly'}</changefreq>\n    <priority>${p === '/' ? '1.0' : '0.6'}</priority>\n  </url>`
 		)
 		.join('\n');
 

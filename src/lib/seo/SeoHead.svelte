@@ -5,6 +5,7 @@
 		DEFAULT_OG_IMAGE,
 		SITE_NAME,
 		TWITTER_CREATOR,
+		TWITTER_SITE,
 		absoluteUrl,
 		getSiteUrl
 	} from './site';
@@ -21,7 +22,8 @@
 		keywords?: string;
 		noindex?: boolean;
 		ogType?: string;
-		structuredData?: unknown;
+		/** One or more JSON-LD objects (each emitted as its own script tag). */
+		structuredData?: unknown | unknown[];
 	}
 
 	let {
@@ -45,11 +47,21 @@
 	);
 	let ogAlt = $derived(imageAlt ?? title);
 
-	let ldPayload = $derived(
-		structuredData
-			? JSON.stringify(structuredData).replace(/</g, '\\u003c')
-			: ''
+	let ldBlocks = $derived(
+		structuredData == null
+			? []
+			: Array.isArray(structuredData)
+				? structuredData
+				: [structuredData]
 	);
+
+	function guessOgImageType(imgUrl: string): string {
+		const u = imgUrl.toLowerCase();
+		if (u.endsWith('.png') || u.includes('.png?')) return 'image/png';
+		if (u.endsWith('.webp') || u.includes('.webp?')) return 'image/webp';
+		if (u.endsWith('.svg') || u.includes('.svg?')) return 'image/svg+xml';
+		return 'image/jpeg';
+	}
 </script>
 
 <svelte:head>
@@ -62,6 +74,11 @@
 
 	<link rel="canonical" href={canonical} />
 
+	{#if !noindex}
+		<link rel="alternate" hreflang="x-default" href={canonical} />
+		<link rel="alternate" hreflang="en" href={canonical} />
+	{/if}
+
 	{#if noindex}
 		<meta name="robots" content="noindex, nofollow" />
 	{:else}
@@ -71,6 +88,7 @@
 		/>
 	{/if}
 
+	<meta name="referrer" content="strict-origin-when-cross-origin" />
 	<meta name="author" content={SITE_NAME} />
 	<meta name="theme-color" content="#fdf7f0" media="(prefers-color-scheme: light)" />
 	<meta name="theme-color" content="#312d27" media="(prefers-color-scheme: dark)" />
@@ -85,14 +103,19 @@
 	<meta property="og:image:width" content={String(imageWidth)} />
 	<meta property="og:image:height" content={String(imageHeight)} />
 	<meta property="og:image:alt" content={ogAlt} />
+	<meta property="og:image:type" content={guessOgImageType(ogImage)} />
+	{#if ogImage.startsWith('https://')}
+		<meta property="og:image:secure_url" content={ogImage} />
+	{/if}
 
 	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content={TWITTER_SITE} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={ogImage} />
 	<meta name="twitter:creator" content={TWITTER_CREATOR} />
 
-	{#if structuredData}
-		{@html `<script type="application/ld+json">${ldPayload}</script>`}
-	{/if}
+	{#each ldBlocks as block}
+		{@html `<script type="application/ld+json">${JSON.stringify(block).replace(/</g, '\\u003c')}</script>`}
+	{/each}
 </svelte:head>

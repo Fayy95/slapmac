@@ -7,13 +7,19 @@ export function getSiteUrl(): string {
 
 export const SITE_NAME = 'SlapMac';
 
+/** Primary meta description (~155 chars): used sitewide default + JSON-LD. */
 export const DEFAULT_DESCRIPTION =
-	"Your macbook finally has feelings. Don't abuse it. Or do.";
+	'SlapMac is a Mac menu bar app for M1 Pro+ MacBooks: slap detection, 7 voice packs, USB moaner, lid creak, custom sound folders. macOS 14.6+. $2 one-time.';
+
+export const DEFAULT_TITLE = 'SlapMac — Slap your MacBook. It talks back.';
 
 /** Shared social preview (matches slapmac.com). */
 export const DEFAULT_OG_IMAGE = 'https://slapmac.com/card.jpg';
 
 export const TWITTER_CREATOR = '@tonnozfpv';
+
+/** Brand / site handle for Twitter/X cards (same as creator for solo projects). */
+export const TWITTER_SITE = '@tonnozfpv';
 
 export function absoluteUrl(href: string, siteUrl = getSiteUrl()): string {
 	if (href.startsWith('http://') || href.startsWith('https://')) return href;

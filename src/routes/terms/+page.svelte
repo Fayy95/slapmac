@@ -1,11 +1,17 @@
 <script lang="ts">
+	import { buildTermsPageJsonLd } from '$lib/seo/jsonld';
 	import SeoHead from '$lib/seo/SeoHead.svelte';
+
+	const TERMS_DESCRIPTION =
+		'Terms of use for SlapMac. Official legal terms are published on slapmac.com; this page links to the canonical policy.';
 </script>
 
 <SeoHead
 	title="Terms — SlapMac"
-	description="Terms of use for SlapMac. Read the official terms on slapmac.com."
+	description={TERMS_DESCRIPTION}
+	keywords="SlapMac terms, terms of use, SlapMac legal"
 	canonicalPath="/terms"
+	structuredData={buildTermsPageJsonLd(TERMS_DESCRIPTION)}
 />
 
 <main class="doc-page">
