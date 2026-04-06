@@ -33,7 +33,11 @@
 		type VoicePack
 	} from '$lib/slapmac/data';
 	import { trackDownloadClick } from '$lib/analytics/mixpanel-seo';
+	import { buildFeaturesPageJsonLd } from '$lib/seo/jsonld';
 	import SeoHead from '$lib/seo/SeoHead.svelte';
+
+	const FEATURES_DESCRIPTION =
+		'SlapMac features: slap detection with 5 algorithms, 7 voice packs, USB Moaner, Lid Creak, custom sound folders, sensitivity & cooldown, menu bar slap counter. macOS 14.6+, M1 Pro+ MacBook.';
 
 	const algoIcons = [Filter, Activity, Zap, Mountain, TrendingUp] as const;
 	const featureIcons = [
@@ -94,8 +98,10 @@
 
 <SeoHead
 	title="Features — SlapMac"
-	description="Everything SlapMac does: slap detection, 7 voice packs, USB Moaner, Lid Creak, adjustable sensitivity, and more."
+	description={FEATURES_DESCRIPTION}
+	keywords="SlapMac features, USB Moaner, Lid Creak, custom sound packs, MacBook accelerometer, menu bar app, slap detection, voice packs"
 	canonicalPath="/features"
+	structuredData={buildFeaturesPageJsonLd(FEATURES_DESCRIPTION)}
 />
 
 <div class="page-root">

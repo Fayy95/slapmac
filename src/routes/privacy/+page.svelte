@@ -1,11 +1,17 @@
 <script lang="ts">
+	import { buildPrivacyPageJsonLd } from '$lib/seo/jsonld';
 	import SeoHead from '$lib/seo/SeoHead.svelte';
+
+	const PRIVACY_DESCRIPTION =
+		'Privacy information for SlapMac. Official privacy policy is published on slapmac.com; this page links to the canonical policy.';
 </script>
 
 <SeoHead
 	title="Privacy — SlapMac"
-	description="Privacy information for SlapMac. Read the official policy on slapmac.com."
+	description={PRIVACY_DESCRIPTION}
+	keywords="SlapMac privacy, privacy policy, data policy"
 	canonicalPath="/privacy"
+	structuredData={buildPrivacyPageJsonLd(PRIVACY_DESCRIPTION)}
 />
 
 <main class="doc-page">
