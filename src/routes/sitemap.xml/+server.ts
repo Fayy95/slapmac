@@ -1,10 +1,10 @@
-import { getSiteUrl } from '$lib/seo/site';
 import type { RequestHandler } from './$types';
 
+const SITEMAP_ORIGIN = 'https://www.slapmymac.net';
 const paths = ['/', '/features', '/privacy', '/terms'] as const;
 
 export const GET: RequestHandler = () => {
-	const base = getSiteUrl();
+	const base = SITEMAP_ORIGIN;
 	const lastmod = new Date().toISOString().slice(0, 10);
 	const urls = paths
 		.map(
