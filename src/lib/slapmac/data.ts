@@ -67,12 +67,12 @@ export const VOICE_PACKS: VoicePack[] = [
 
 export const FAQ_ITEMS: { q: string; a: string }[] = [
 	{
-		q: 'Will I void my MacBook warranty with SlapMac?',
-		a: "Probably not — but we're not lawyers. SlapMac uses the built-in accelerometer, no hardware mods. That said, if you slap hard enough to crack your screen, that's on you."
+		q: 'Will I void my MacBook warranty with SlapMyMac?',
+		a: "Probably not — but we're not lawyers. SlapMyMac uses the built-in accelerometer, no hardware mods. That said, if you slap hard enough to crack your screen, that's on you."
 	},
 	{
 		q: 'Does it work on Intel Macs?',
-		a: "No. SlapMac requires an M1PRO+ MacBook because it reads the built-in accelerometer, which isn't available on Intel Macs."
+		a: "No. SlapMyMac requires an M1PRO+ MacBook because it reads the built-in accelerometer, which isn't available on Intel Macs."
 	},
 	{
 		q: 'Can I add my own sounds?',
@@ -80,7 +80,7 @@ export const FAQ_ITEMS: { q: string; a: string }[] = [
 	},
 	{
 		q: 'Does it drain my battery?',
-		a: 'Barely. SlapMac polls the accelerometer at ~12.5 Hz, which is negligible. It uses less energy than most menu bar apps.'
+		a: 'Barely. SlapMyMac polls the accelerometer at ~12.5 Hz, which is negligible. It uses less energy than most menu bar apps.'
 	},
 	{
 		q: 'Will it trigger during normal typing?',

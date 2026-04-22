@@ -3,13 +3,13 @@
 	import SeoHead from '$lib/seo/SeoHead.svelte';
 
 	const TERMS_DESCRIPTION =
-		'Terms of use for SlapMac. Official legal terms are published on slapmac.com; this page links to the canonical policy.';
+		'Terms of use for SlapMyMac. Official legal terms are published on slapmac.com; this page links to the canonical policy.';
 </script>
 
 <SeoHead
-	title="Terms — SlapMac"
+	title="Terms — SlapMyMac"
 	description={TERMS_DESCRIPTION}
-	keywords="SlapMac terms, terms of use, SlapMac legal"
+	keywords="SlapMyMac terms, terms of use, SlapMyMac legal"
 	canonicalPath="/terms"
 	structuredData={buildTermsPageJsonLd(TERMS_DESCRIPTION)}
 />
@@ -17,7 +17,7 @@
 <main class="doc-page">
 	<h1>Terms</h1>
 	<p>
-		The official SlapMac terms are published at
+		The official SlapMyMac terms are published at
 		<a href="https://slapmac.com/terms" rel="noopener noreferrer">slapmac.com/terms</a>.
 	</p>
 	<p><a href="/">← Back to home</a></p>

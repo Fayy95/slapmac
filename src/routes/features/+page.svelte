@@ -37,7 +37,7 @@
 	import SeoHead from '$lib/seo/SeoHead.svelte';
 
 	const FEATURES_DESCRIPTION =
-		'SlapMac features: slap detection with 5 algorithms, 7 voice packs, USB Moaner, Lid Creak, custom sound folders, sensitivity & cooldown, menu bar slap counter. macOS 14.6+, M1 Pro+ MacBook.';
+		'SlapMyMac features: slap detection with 5 algorithms, 7 voice packs, USB Moaner, Lid Creak, custom sound folders, sensitivity & cooldown, menu bar slap counter. macOS 14.6+, M1 Pro+ MacBook.';
 
 	const algoIcons = [Filter, Activity, Zap, Mountain, TrendingUp] as const;
 	const featureIcons = [
@@ -97,9 +97,9 @@
 </script>
 
 <SeoHead
-	title="Features — SlapMac"
+	title="Features — SlapMyMac"
 	description={FEATURES_DESCRIPTION}
-	keywords="SlapMac features, USB Moaner, Lid Creak, custom sound packs, MacBook accelerometer, menu bar app, slap detection, voice packs"
+	keywords="SlapMyMac features, USB Moaner, Lid Creak, custom sound packs, MacBook accelerometer, menu bar app, slap detection, voice packs"
 	canonicalPath="/features"
 	structuredData={buildFeaturesPageJsonLd(FEATURES_DESCRIPTION)}
 />
@@ -131,7 +131,7 @@
 		</div>
 		<h1 class="hero-title">Every feature,<br />explained.</h1>
 		<p class="hero-sub">
-			SlapMac is deceptively simple on the surface.<br />
+			SlapMyMac is deceptively simple on the surface.<br />
 			Here's what's running under the hood.
 		</p>
 	</header>

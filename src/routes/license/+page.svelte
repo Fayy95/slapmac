@@ -5,7 +5,7 @@
 </script>
 
 <SeoHead
-	title="Your SlapMac license"
+	title="Your SlapMyMac license"
 	description="Your license key after purchase."
 	canonicalPath="/license"
 	noindex={true}

@@ -46,7 +46,7 @@ export function buildFeaturesPageJsonLd(description: string) {
 	return [
 		buildWebPageJsonLd({
 			path: FEATURES_PATH,
-			name: 'Features — SlapMac',
+			name: 'Features — SlapMyMac',
 			description
 		}),
 		buildBreadcrumbJsonLd([
@@ -61,7 +61,7 @@ export function buildTermsPageJsonLd(description: string) {
 	return [
 		buildWebPageJsonLd({
 			path,
-			name: 'Terms of use — SlapMac',
+			name: 'Terms of use — SlapMyMac',
 			description
 		}),
 		buildBreadcrumbJsonLd([
@@ -76,7 +76,7 @@ export function buildPrivacyPageJsonLd(description: string) {
 	return [
 		buildWebPageJsonLd({
 			path,
-			name: 'Privacy — SlapMac',
+			name: 'Privacy — SlapMyMac',
 			description
 		}),
 		buildBreadcrumbJsonLd([
