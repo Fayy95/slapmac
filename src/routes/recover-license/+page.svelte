@@ -6,8 +6,8 @@
 </script>
 
 <SeoHead
-	title="Recover your SlapMac license"
-	description="Look up your SlapMac license key by email."
+	title="Recover your SlapMyMac license"
+	description="Look up your SlapMyMac license key by email."
 	canonicalPath="/recover-license"
 	noindex={true}
 />

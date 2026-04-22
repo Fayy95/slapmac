@@ -3,13 +3,13 @@
 	import SeoHead from '$lib/seo/SeoHead.svelte';
 
 	const PRIVACY_DESCRIPTION =
-		'Privacy information for SlapMac. Official privacy policy is published on slapmac.com; this page links to the canonical policy.';
+		'Privacy information for SlapMyMac. Official privacy policy is published on slapmac.com; this page links to the canonical policy.';
 </script>
 
 <SeoHead
-	title="Privacy — SlapMac"
+	title="Privacy — SlapMyMac"
 	description={PRIVACY_DESCRIPTION}
-	keywords="SlapMac privacy, privacy policy, data policy"
+	keywords="SlapMyMac privacy, privacy policy, data policy"
 	canonicalPath="/privacy"
 	structuredData={buildPrivacyPageJsonLd(PRIVACY_DESCRIPTION)}
 />
@@ -17,7 +17,7 @@
 <main class="doc-page">
 	<h1>Privacy</h1>
 	<p>
-		The official SlapMac privacy policy is published at
+		The official SlapMyMac privacy policy is published at
 		<a href="https://slapmac.com/privacy" rel="noopener noreferrer">slapmac.com/privacy</a>.
 	</p>
 	<p><a href="/">← Back to home</a></p>

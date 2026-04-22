@@ -1,7 +1,27 @@
 import type { RequestHandler } from './$types';
 
 const SITEMAP_ORIGIN = 'https://www.slapmymac.net';
-const paths = ['/', '/features', '/privacy', '/terms'] as const;
+const paths = [
+	'/',
+	'/features',
+	'/mac-sound-on-charger-connect-disconnect',
+	'/privacy',
+	'/terms'
+] as const;
+
+type Path = (typeof paths)[number];
+
+const priorityFor = (p: Path): string => {
+	if (p === '/') return '1.0';
+	if (p === '/mac-sound-on-charger-connect-disconnect' || p === '/features') return '0.8';
+	return '0.6';
+};
+
+const changefreqFor = (p: Path): string => {
+	if (p === '/') return 'weekly';
+	if (p === '/mac-sound-on-charger-connect-disconnect' || p === '/features') return 'weekly';
+	return 'monthly';
+};
 
 export const GET: RequestHandler = () => {
 	const base = SITEMAP_ORIGIN;
@@ -9,7 +29,7 @@ export const GET: RequestHandler = () => {
 	const urls = paths
 		.map(
 			(p) =>
-				`  <url>\n    <loc>${base}${p === '/' ? '' : p}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${p === '/' ? 'weekly' : 'monthly'}</changefreq>\n    <priority>${p === '/' ? '1.0' : '0.6'}</priority>\n  </url>`
+				`  <url>\n    <loc>${base}${p === '/' ? '' : p}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreqFor(p)}</changefreq>\n    <priority>${priorityFor(p)}</priority>\n  </url>`
 		)
 		.join('\n');
 

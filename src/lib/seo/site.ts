@@ -27,13 +27,14 @@ export function getSiteUrl(): string {
 	return CANONICAL_SITE_ORIGIN;
 }
 
-export const SITE_NAME = 'SlapMac';
+export const SITE_NAME = 'SlapMyMac';
 
 /** Primary meta description (~155 chars): used sitewide default + JSON-LD. */
 export const DEFAULT_DESCRIPTION =
-	'SlapMac is a Mac menu bar app for M1 Pro+ MacBooks: slap detection, 7 voice packs, USB moaner, lid creak, custom sound folders. macOS 14.6+. $2 one-time.';
+	'SlapMyMac is the viral Mac menu bar app that makes your MacBook scream when you slap it. 7 voice packs, USB moaner, lid creak & custom sounds. M1 Pro+ · macOS 14.6+ · $2.';
 
-export const DEFAULT_TITLE = 'SlapMac — Slap your MacBook. It talks back.';
+export const DEFAULT_TITLE =
+	'SlapMyMac — Slap Your MacBook, It Screams Back | Funny Mac Menu Bar App';
 
 /** Shared social preview (matches slapmac.com). */
 export const DEFAULT_OG_IMAGE = 'https://slapmac.com/card.jpg';

@@ -11,7 +11,7 @@
 	<link rel="icon" href="/slapmac_logo_no_text.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/slapmac_logo_no_text.svg" />
 	<link rel="manifest" href="/site.webmanifest" />
-	<meta name="application-name" content="SlapMac" />
+	<meta name="application-name" content="SlapMyMac" />
 	<meta name="format-detection" content="telephone=no" />
 	<link rel="dns-prefetch" href="https://slapmac.com" />
 	<link rel="preconnect" href="https://slapmac.com" crossorigin="" />

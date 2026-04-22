@@ -5,7 +5,7 @@
 	const status = $derived(page.status);
 	const message = $derived(page.error?.message ?? 'Something went wrong.');
 	const title = $derived(
-		status === 404 ? 'Page not found — SlapMac' : `Error ${status} — SlapMac`
+		status === 404 ? 'Page not found — SlapMyMac' : `Error ${status} — SlapMyMac`
 	);
 	const description = $derived(
 		status === 404
