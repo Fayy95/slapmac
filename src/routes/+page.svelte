@@ -747,9 +747,43 @@
 			</div>
 		</div>
 
-		
+		<!-- Explore more — internal linking for SEO + discovery -->
+		<div class="mx-auto max-w-2xl px-6 pb-8 relative z-10">
+			<nav class="explore" aria-label="Explore SlapMyMac">
+				<p class="explore-title">Explore SlapMyMac</p>
+				<div class="explore-grid">
+					<a href="/features" class="explore-card">
+						<span class="explore-emoji">🎛️</span>
+						<span class="explore-name">All features</span>
+						<span class="explore-desc">Slap detection, voice packs, controls &amp; algorithms</span>
+					</a>
+					<a href="/mac-sound-on-charger-connect-disconnect" class="explore-card">
+						<span class="explore-emoji">🔌</span>
+						<span class="explore-name">Charger sound</span>
+						<span class="explore-desc">Play a sound when your MagSafe or USB‑C charger connects / disconnects</span>
+					</a>
+				</div>
+			</nav>
+		</div>
 
-		
+		<footer class="site-foot mx-auto max-w-2xl px-6 relative z-10">
+			<div class="site-foot-nav">
+				<a href="/" class="site-foot-link">Home</a>
+				<span class="site-foot-dot">·</span>
+				<a href="/features" class="site-foot-link">Features</a>
+				<span class="site-foot-dot">·</span>
+				<a href="/mac-sound-on-charger-connect-disconnect" class="site-foot-link">Charger sound</a>
+				<span class="site-foot-dot">·</span>
+				<a href="/#faq" class="site-foot-link">FAQ</a>
+				<span class="site-foot-dot">·</span>
+				<a href="/recover-license" class="site-foot-link">Recover license</a>
+				<span class="site-foot-dot">·</span>
+				<a href="/privacy" class="site-foot-link">Privacy</a>
+				<span class="site-foot-dot">·</span>
+				<a href="/terms" class="site-foot-link">Terms</a>
+			</div>
+			<p class="site-foot-copy">© {new Date().getFullYear()} SlapMyMac · Made for MacBooks with feelings</p>
+		</footer>
 	</div>
 </div>
 
@@ -1172,6 +1206,83 @@
 		font-size: 0.95rem;
 		line-height: 1.6;
 		color: var(--muted-foreground);
+	}
+	.explore {
+		padding: 1.5rem 0 0.5rem;
+	}
+	.explore-title {
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--muted-foreground);
+		margin: 0 0 0.85rem;
+		text-align: center;
+	}
+	.explore-grid {
+		display: grid;
+		gap: 0.75rem;
+		grid-template-columns: 1fr;
+	}
+	@media (min-width: 560px) {
+		.explore-grid { grid-template-columns: 1fr 1fr; }
+	}
+	.explore-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		padding: 1.1rem 1.2rem;
+		border-radius: 0.95rem;
+		border: 1px solid var(--border);
+		background: var(--card);
+		text-decoration: none;
+		transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+	}
+	.explore-card:hover {
+		border-color: color-mix(in oklab, var(--primary) 40%, var(--border));
+		transform: translateY(-2px);
+		box-shadow: 0 8px 20px color-mix(in oklab, var(--primary) 12%, transparent);
+	}
+	.explore-emoji {
+		font-size: 1.25rem;
+		line-height: 1;
+		margin-bottom: 0.2rem;
+	}
+	.explore-name {
+		font-size: 0.92rem;
+		font-weight: 700;
+		color: var(--card-foreground);
+	}
+	.explore-desc {
+		font-size: 0.78rem;
+		line-height: 1.5;
+		color: var(--muted-foreground);
+	}
+	.site-foot {
+		padding: 2rem 1.5rem 2.5rem;
+		text-align: center;
+		color: var(--muted-foreground);
+	}
+	.site-foot-nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 0.4rem;
+		margin-bottom: 0.75rem;
+	}
+	.site-foot-link {
+		font-size: 0.78rem;
+		color: var(--muted-foreground);
+		text-decoration: none;
+		transition: color 0.15s;
+	}
+	.site-foot-link:hover { color: var(--foreground); }
+	.site-foot-dot { font-size: 0.7rem; opacity: 0.5; }
+	.site-foot-copy {
+		margin: 0;
+		font-size: 0.7rem;
+		opacity: 0.7;
 	}
 	.font-mono {
 		font-family: var(--font-mono);
