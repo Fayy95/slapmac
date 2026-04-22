@@ -3,7 +3,9 @@
 	import { onMount } from 'svelte';
 	import {
 		Activity,
+		ArrowRight,
 		AudioLines,
+		BatteryCharging,
 		ChartColumn,
 		Download,
 		Filter,
@@ -16,6 +18,7 @@
 		Mountain,
 		Music,
 		Play,
+		Plug,
 		SlidersHorizontal,
 		Sun,
 		Timer,
@@ -221,9 +224,56 @@
 					<Usb class="bento-sm-icon-inline" strokeWidth={1.5} />
 					<h2 class="bento-med-title">USB Moaner</h2>
 				</div>
-				<p class="bento-sm-body">Plug or unplug any USB device. It moans. Same voice packs, no slapping required.</p>
+				<p class="bento-sm-body">
+					Plug or unplug any USB device — including your
+					<a href="/mac-sound-on-charger-connect-disconnect" class="inline-link">charger</a>.
+					It moans. Same voice packs, no slapping required.
+				</p>
 			</div>
 		</div>
+
+		<!-- Full-width link card: Charger Sound (deep links to the dedicated page) -->
+		<a
+			href="/mac-sound-on-charger-connect-disconnect"
+			class="bento-cell bento-charger"
+			aria-label="Open the charger sound feature page"
+		>
+			<div class="charger-accent" aria-hidden="true"></div>
+			<div class="charger-inner">
+				<div class="charger-left">
+					<div class="bento-title-row">
+						<BatteryCharging class="bento-sm-icon-inline" strokeWidth={1.5} />
+						<h2 class="bento-med-title">Charger Sound — MagSafe &amp; USB‑C</h2>
+						<span class="badge-new">New page</span>
+					</div>
+					<p class="charger-body">
+						Play a custom sound the instant your MacBook's charger connects or disconnects.
+						Works on MagSafe 3 and every USB‑C power adapter. Different sound for plug vs unplug,
+						picked from 7 voice packs or your own MP3 folder.
+					</p>
+					<div class="charger-chips">
+						<span class="chip">MagSafe 3</span>
+						<span class="chip">USB‑C</span>
+						<span class="chip">Custom sounds</span>
+					</div>
+				</div>
+				<div class="charger-right">
+					<div class="charger-anim" aria-hidden="true">
+						<div class="charger-mac">
+							<div class="charger-screen">
+								<BatteryCharging class="charger-screen-ico" strokeWidth={2} />
+							</div>
+							<div class="charger-base"></div>
+						</div>
+						<div class="charger-cable"><Plug class="charger-plug-ico" strokeWidth={2} /></div>
+					</div>
+					<span class="charger-cta">
+						Learn more
+						<ArrowRight class="charger-cta-ico" strokeWidth={2} />
+					</span>
+				</div>
+			</div>
+		</a>
 
 	</section>
 
@@ -390,6 +440,8 @@
 		<a href="/" class="foot-link">Home</a>
 		<span class="foot-dot">·</span>
 		<a href="/features" class="foot-link">Features</a>
+		<span class="foot-dot">·</span>
+		<a href="/mac-sound-on-charger-connect-disconnect" class="foot-link">Charger sound</a>
 		<span class="foot-dot">·</span>
 		<a href="/privacy" class="foot-link">Privacy</a>
 		<span class="foot-dot">·</span>
@@ -814,6 +866,155 @@
 		0%, 40% { opacity: 0; transform: scale(0.5); }
 		55%, 75% { opacity: 1; transform: scale(1); }
 		90%, 100% { opacity: 0; }
+	}
+
+	/* ── Charger bento (full-width link card) ── */
+	.bento-charger {
+		grid-column: 1 / -1;
+		padding: 0;
+		text-decoration: none;
+		color: inherit;
+		position: relative;
+		overflow: hidden;
+		background: linear-gradient(135deg, var(--card) 0%, color-mix(in oklab, var(--primary) 6%, var(--card)) 100%);
+		border: 1px solid color-mix(in oklab, var(--primary) 30%, var(--border));
+		cursor: pointer;
+	}
+	.bento-charger::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: linear-gradient(90deg, var(--primary), var(--ring), var(--primary));
+		background-size: 200% 100%;
+		animation: charger-shimmer 5s linear infinite;
+	}
+	@keyframes charger-shimmer {
+		0% { background-position: 0% 50%; }
+		100% { background-position: 200% 50%; }
+	}
+	.bento-charger:hover {
+		border-color: color-mix(in oklab, var(--primary) 55%, var(--border));
+		transform: translateY(-3px);
+		box-shadow:
+			0 14px 36px color-mix(in oklab, var(--primary) 20%, transparent),
+			0 4px 12px color-mix(in oklab, var(--foreground) 8%, transparent);
+	}
+	.charger-accent {
+		position: absolute;
+		top: -4rem;
+		right: -4rem;
+		width: 16rem;
+		height: 16rem;
+		border-radius: 9999px;
+		background: radial-gradient(circle, color-mix(in oklab, var(--primary) 22%, transparent), transparent 70%);
+		pointer-events: none;
+	}
+	.charger-inner {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		padding: 1.625rem;
+	}
+	@media (min-width: 720px) {
+		.charger-inner {
+			flex-direction: row;
+			align-items: center;
+			gap: 1.75rem;
+		}
+	}
+	.charger-left { flex: 1; }
+	.charger-right {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-shrink: 0;
+	}
+	.charger-body {
+		margin: 0.5rem 0 0.75rem;
+		font-size: 0.875rem;
+		line-height: 1.6;
+		color: var(--muted-foreground);
+	}
+	.charger-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+	}
+	.charger-anim {
+		display: flex;
+		align-items: flex-end;
+		gap: 0.4rem;
+	}
+	.charger-mac {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.charger-screen {
+		width: 4.5rem;
+		height: 3rem;
+		border-radius: 0.35rem 0.35rem 0 0;
+		background: #0a1410;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid color-mix(in oklab, var(--primary) 50%, #0a0a0a);
+		box-shadow: 0 0 14px color-mix(in oklab, var(--primary) 35%, transparent);
+	}
+	:global(.charger-screen-ico) {
+		width: 1.5rem;
+		height: 1.5rem;
+		color: #9bf26d;
+	}
+	.charger-base {
+		width: 5.5rem;
+		height: 0.28rem;
+		border-radius: 0 0 0.45rem 0.45rem;
+		background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
+		margin-top: 0.1rem;
+	}
+	.charger-cable {
+		color: var(--primary);
+		animation: charger-pulse 2.4s ease-in-out infinite;
+	}
+	@keyframes charger-pulse {
+		0%, 100% { transform: translateX(-0.4rem); opacity: 0.55; }
+		50% { transform: translateX(0); opacity: 1; }
+	}
+	:global(.charger-plug-ico) { width: 1.25rem; height: 1.25rem; }
+	.charger-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: var(--primary);
+		letter-spacing: 0.01em;
+		white-space: nowrap;
+	}
+	.bento-charger:hover .charger-cta {
+		gap: 0.55rem;
+	}
+	:global(.charger-cta-ico) {
+		width: 0.95rem;
+		height: 0.95rem;
+		transition: transform 0.2s ease;
+	}
+	.bento-charger:hover :global(.charger-cta-ico) {
+		transform: translateX(3px);
+	}
+	.inline-link {
+		color: var(--primary);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		font-weight: 500;
+	}
+	.inline-link:hover {
+		color: color-mix(in oklab, var(--primary) 80%, var(--foreground));
 	}
 
 	/* ─── Sections ─── */

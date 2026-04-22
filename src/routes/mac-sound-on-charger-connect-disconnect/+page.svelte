@@ -388,6 +388,58 @@
 			<p class="cta-back"><a href="/">← Back to SlapMyMac homepage</a></p>
 		</div>
 	</section>
+
+	<!-- Related pages (internal linking) -->
+	<section class="section related" aria-label="Related SlapMyMac pages">
+		<h2 class="section-title">Related SlapMyMac features</h2>
+		<div class="related-grid">
+			<a href="/features" class="related-card">
+				<span class="related-emoji">🎛️</span>
+				<span class="related-name">All SlapMyMac features</span>
+				<span class="related-desc">
+					Slap detection, 7 voice packs, Lid Creak, USB Moaner, 5 algorithms &amp; custom sound packs
+				</span>
+			</a>
+			<a href="/" class="related-card">
+				<span class="related-emoji">👋</span>
+				<span class="related-name">SlapMyMac homepage</span>
+				<span class="related-desc">
+					The viral Mac menu bar app that makes your MacBook scream when you slap it
+				</span>
+			</a>
+			<a href="/#faq" class="related-card">
+				<span class="related-emoji">❓</span>
+				<span class="related-name">SlapMyMac FAQ</span>
+				<span class="related-desc">
+					Compatibility, battery, sensitivity, custom sounds &amp; refund policy
+				</span>
+			</a>
+			<a href="/recover-license" class="related-card">
+				<span class="related-emoji">🔑</span>
+				<span class="related-name">Recover your license</span>
+				<span class="related-desc">
+					Lost your license key? Look it up by email.
+				</span>
+			</a>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="site-foot">
+		<div class="site-foot-nav">
+			<a href="/" class="site-foot-link">Home</a>
+			<span class="site-foot-dot">·</span>
+			<a href="/features" class="site-foot-link">Features</a>
+			<span class="site-foot-dot">·</span>
+			<a href="/mac-sound-on-charger-connect-disconnect" class="site-foot-link">Charger sound</a>
+			<span class="site-foot-dot">·</span>
+			<a href="/#faq" class="site-foot-link">FAQ</a>
+			<span class="site-foot-dot">·</span>
+			<a href="/privacy" class="site-foot-link">Privacy</a>
+			<span class="site-foot-dot">·</span>
+			<a href="/terms" class="site-foot-link">Terms</a>
+		</div>
+	</footer>
 </div>
 
 <style>
@@ -881,4 +933,104 @@
 	.w-10 { width: 2.5rem; }
 	.shrink-0 { flex-shrink: 0; }
 	.text-primary { color: var(--primary); }
+
+	/* Related SlapMyMac pages section */
+	.related {
+		padding: 48px 0 16px;
+	}
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 14px;
+		margin-top: 18px;
+	}
+	@media (max-width: 900px) {
+		.related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	}
+	@media (max-width: 520px) {
+		.related-grid { grid-template-columns: 1fr; }
+	}
+	.related-card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		padding: 18px 18px 20px;
+		background: color-mix(in oklab, var(--card) 94%, transparent);
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		text-decoration: none;
+		color: var(--foreground);
+		transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+		overflow: hidden;
+	}
+	.related-card::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(
+			120% 80% at 0% 0%,
+			color-mix(in oklab, var(--primary) 12%, transparent),
+			transparent 55%
+		);
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		pointer-events: none;
+	}
+	.related-card:hover {
+		transform: translateY(-2px);
+		border-color: color-mix(in oklab, var(--primary) 45%, var(--border));
+		box-shadow: 0 10px 28px -16px color-mix(in oklab, var(--primary) 45%, transparent);
+		background: color-mix(in oklab, var(--card) 98%, transparent);
+	}
+	.related-card:hover::after { opacity: 1; }
+	.related-emoji {
+		font-size: 26px;
+		line-height: 1;
+		margin-bottom: 4px;
+	}
+	.related-name {
+		font-weight: 700;
+		font-size: 15px;
+		letter-spacing: -0.01em;
+		color: var(--foreground);
+	}
+	.related-desc {
+		font-size: 13px;
+		line-height: 1.45;
+		color: var(--muted-foreground);
+	}
+
+	/* Site footer */
+	.site-foot {
+		margin-top: 48px;
+		padding: 28px 0 36px;
+		border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+	}
+	.site-foot-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 10px 12px;
+	}
+	.site-foot-link {
+		color: var(--muted-foreground);
+		text-decoration: none;
+		font-size: 13.5px;
+		font-weight: 500;
+		letter-spacing: -0.005em;
+		padding: 4px 2px;
+		transition: color 0.15s ease;
+	}
+	.site-foot-link:hover {
+		color: var(--foreground);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+	.site-foot-dot {
+		color: color-mix(in oklab, var(--muted-foreground) 55%, transparent);
+		font-size: 12px;
+		user-select: none;
+	}
 </style>
