@@ -36,8 +36,8 @@ export const DEFAULT_DESCRIPTION =
 export const DEFAULT_TITLE =
 	'SlapMyMac — Slap Your MacBook, It Screams Back | Funny Mac Menu Bar App';
 
-/** Shared social preview (matches slapmac.com). */
-export const DEFAULT_OG_IMAGE = 'https://slapmac.com/card.jpg';
+/** Shared social preview (matches slapmymac.net). */
+export const DEFAULT_OG_IMAGE = 'https://slapmymac.net/card.jpg';
 
 export const TWITTER_CREATOR = '@tonnozfpv';
 
