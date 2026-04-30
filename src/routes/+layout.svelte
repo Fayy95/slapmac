@@ -13,8 +13,8 @@
 	<link rel="manifest" href="/site.webmanifest" />
 	<meta name="application-name" content="SlapMyMac" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="dns-prefetch" href="https://slapmac.com" />
-	<link rel="preconnect" href="https://slapmac.com" crossorigin="" />
+	<link rel="dns-prefetch" href="https://slapmymac.net" />
+	<link rel="preconnect" href="https://slapmymac.net" crossorigin="" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 </svelte:head>

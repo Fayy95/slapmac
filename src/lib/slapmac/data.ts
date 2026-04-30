@@ -1,4 +1,4 @@
-export const ASSET = 'https://slapmac.com';
+export const ASSET = 'https://slapmymac.net';
 
 export const DOWNLOAD_URL =
 	'https://staffwatcher.nyc3.cdn.digitaloceanspaces.com/builds/SlapMyMac.app.zip';
