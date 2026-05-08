@@ -1,35 +1,43 @@
 import type { RequestHandler } from './$types';
 
 const SITEMAP_ORIGIN = 'https://www.slapmymac.net';
-const paths = [
-	'/',
-	'/features',
-	'/mac-sound-on-charger-connect-disconnect',
-	'/privacy',
-	'/terms'
-] as const;
 
-type Path = (typeof paths)[number];
-
-const priorityFor = (p: Path): string => {
-	if (p === '/') return '1.0';
-	if (p === '/mac-sound-on-charger-connect-disconnect' || p === '/features') return '0.8';
-	return '0.6';
+type SitemapEntry = {
+	path: string;
+	priority: string;
+	changefreq: string;
 };
 
-const changefreqFor = (p: Path): string => {
-	if (p === '/') return 'weekly';
-	if (p === '/mac-sound-on-charger-connect-disconnect' || p === '/features') return 'weekly';
-	return 'monthly';
-};
+const entries: SitemapEntry[] = [
+	{ path: '/', priority: '1.0', changefreq: 'weekly' },
+	{ path: '/features', priority: '0.8', changefreq: 'weekly' },
+	{ path: '/mac-sound-on-charger-connect-disconnect', priority: '0.8', changefreq: 'weekly' },
+	// Blog index
+	{ path: '/blog', priority: '0.8', changefreq: 'weekly' },
+	// Blog pillar post
+	{ path: '/blog/what-is-slapmac', priority: '0.9', changefreq: 'monthly' },
+	// Blog supporting posts
+	{ path: '/blog/slapmac-setup-guide', priority: '0.7', changefreq: 'monthly' },
+	{ path: '/blog/slapmac-voice-packs', priority: '0.7', changefreq: 'monthly' },
+	{ path: '/blog/macbook-accelerometer-slap-detection', priority: '0.7', changefreq: 'monthly' },
+	{ path: '/blog/slapmac-review', priority: '0.7', changefreq: 'monthly' },
+	{ path: '/blog/slapmac-custom-sounds', priority: '0.7', changefreq: 'monthly' },
+	{ path: '/blog/slapmac-usb-moaner', priority: '0.7', changefreq: 'monthly' },
+	{ path: '/blog/funny-mac-apps-2026', priority: '0.6', changefreq: 'monthly' },
+	{ path: '/blog/slapmac-requirements-compatibility', priority: '0.7', changefreq: 'monthly' },
+	// Legal
+	{ path: '/privacy', priority: '0.4', changefreq: 'monthly' },
+	{ path: '/terms', priority: '0.4', changefreq: 'monthly' }
+];
 
 export const GET: RequestHandler = () => {
 	const base = SITEMAP_ORIGIN;
 	const lastmod = new Date().toISOString().slice(0, 10);
-	const urls = paths
+
+	const urls = entries
 		.map(
-			(p) =>
-				`  <url>\n    <loc>${base}${p === '/' ? '' : p}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreqFor(p)}</changefreq>\n    <priority>${priorityFor(p)}</priority>\n  </url>`
+			({ path, priority, changefreq }) =>
+				`  <url>\n    <loc>${base}${path === '/' ? '' : path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`
 		)
 		.join('\n');
 
