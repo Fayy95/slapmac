@@ -1,5 +1,8 @@
 import adapter from '@sveltejs/adapter-auto';
 import { relative, sep } from 'node:path';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
