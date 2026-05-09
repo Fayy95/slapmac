@@ -443,6 +443,8 @@
 		<span class="foot-dot">·</span>
 		<a href="/mac-sound-on-charger-connect-disconnect" class="foot-link">Charger sound</a>
 		<span class="foot-dot">·</span>
+		<a href="/blog" class="foot-link">Blog</a>
+		<span class="foot-dot">·</span>
 		<a href="/privacy" class="foot-link">Privacy</a>
 		<span class="foot-dot">·</span>
 		<a href="/terms" class="foot-link">Terms</a>

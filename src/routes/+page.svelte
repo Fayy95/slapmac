@@ -774,6 +774,8 @@
 				<span class="site-foot-dot">·</span>
 				<a href="/mac-sound-on-charger-connect-disconnect" class="site-foot-link">Charger sound</a>
 				<span class="site-foot-dot">·</span>
+				<a href="/blog" class="site-foot-link">Blog</a>
+				<span class="site-foot-dot">·</span>
 				<a href="/#faq" class="site-foot-link">FAQ</a>
 				<span class="site-foot-dot">·</span>
 				<a href="/recover-license" class="site-foot-link">Recover license</a>
